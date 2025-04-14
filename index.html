@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="soon">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SurGSplat: Progressive Geometry-Constrained Gaussian Splatting for Surgical Scene Reconstruction</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script> -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <!-- <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet"> -->
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <!-- <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"> -->
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/comparison.css">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <title>Image Centering</title>
+    <style>
+        .image-container {
+            text-align: center;
+        }
+        .image-container img {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+<!-- authors -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">SurGSplat: Progressive Geometry-Constrained Gaussian Splatting for Surgical Scene Reconstruction</h1>
+          <div class="is-size-5 publication-authors" style="text-align: center;">
+            <span class="author-block">
+              <a href="">Yuchao Zheng</a><sup>1</sup></span>&nbsp;&nbsp;
+            <span class="author-block">
+              <a href="">Jianing Zhang</a><sup>2</sup>&nbsp;&nbsp;
+            </span>
+            <span class="author-block">
+              <a href="">Guochen Ning</a><sup>3,&#9993;</sup>&nbsp;&nbsp;
+            </span>
+            <span class="author-block">
+              <a href="">Hongen Liao</a><sup>1</sup>&nbsp;&nbsp;
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors" style="text-align: center;">
+            <div><span class="author-block"><sup>1</sup>School of Biomedical Engineering, Tsinghua University</span></div>
+            <div><span class="author-block"><sup>2</sup>School of Information Science and Technology, Fudan University</span></div>
+            <div><span class="author-block"><sup>3</sup>School of Clinical Medicine, Tsinghua University</span></div>
+            <br>
+            <div class="email-link">
+              <!-- <a href="mailto:maikeyeweicai@gmail.com">maikeyeweicai@gmail.com</a> -->
+              <!-- <a href="mailto:tonghe90@gmail.com">tonghe90@gmail.com</a> -->
+            </div>
+          </div>
+
+          <!-- <div class="column has-text-centered">
+            <div class="publication-links"> -->
+              <!-- PDF Link. -->
+              <!-- <span class="link-block">
+                <a href="paper/pgsr.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2406.06521"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span> -->
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/zju3dv/PGSR"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span> -->
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- teaser.png -->
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img id="teaser" height="100%" src="./static/images/teaser.png" alt="ND-SDF teaser."/>
+      <p>
+        We present <b>ND-SDF</b>, a framework for high-fidelity 3D indoor surface reconstruction from multi-views. Shown above is an extracted mesh from ScanNet++.
+      </p>
+    </div>
+  </div>
+</section> -->
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Abstract -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified" style="margin-top: 1rem;">
+          <p>
+            Intraoperative navigation relies heavily on precise 3D reconstruction to ensure accuracy and safety during surgical procedures. However, endoscopic scenarios present unique challenges, including sparse features and inconsistent lighting, which render many existing Structure-from-Motion (SfM)-based methods inadequate and prone to reconstruction failure. To mitigate these constraints, we propose <b>SurGSplat</b>, a novel paradigm designed to progressively refine 3D Gaussian Splatting (3DGS) through the integration of geometric constraints. By enabling the detailed reconstruction of vascular structures and other critical features, SurGSplat provides surgeons with enhanced visual clarity, facilitating precise intraoperative decision-making. Experimental evaluations demonstrate that SurGSplat achieves superior performance in both novel view synthesis (NVS) and pose estimation accuracy, establishing it as a high-fidelity and efficient solution for surgical scene reconstruction.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <hr style="margin-top: 2rem; margin-bottom: 2rem;">
+
+    <!-- Method -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method</h2>
+        <div class="content has-text-justified" style="margin-top: 1rem;">
+          <img src="./static/images/pipline.png"
+               class="framework-image"
+               alt="PGSR overview."
+               style="max-width: 100%; height: auto; margin-bottom: 1.5rem;" />
+          <p>
+            Pipeline of <b>SurGSplat</b> for high-fidelity surgical scene reconstruction. Starting with an initial depth map generated from a single image <i>I<sub>0</sub></i>, our method iteratively optimizes camera poses and global 3D Gaussian representations. Each frame is processed by constructing a local 3D Gaussian set and optimizing the relative pose via neural rendering. The accumulated poses are used to refine the global 3D Gaussians based on geometric consistency losses.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr style="margin-top: 2rem; margin-bottom: 2rem;">
+
+
+<!-- Comparisons -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3" style="text-align: center;">Comparisons</h2>
+
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <img style="width: 100%;" src="./static/images/nvs.png" alt="Comparison Image" />
+    </div>
+  </div>
+</section>
+
+<!-- Videos -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3" style="text-align: center;">Videos</h2>
+
+    <div style="margin-bottom: 2rem;">
+      <video controls width="100%" height="100%" src="./static/videos/kf1.mp4" type="video/mp4" autoplay muted loop playsinline></video> 
+      <div style="text-align: center; margin-top: 0.5rem;">
+        <p>Scene 1: Training with 30 frames. The left image is the input view, while the right one is the rendered view.</p>
+      </div>
+    </div>
+
+    <div style="margin-bottom: 2rem;">
+      <video controls width="100%" height="100%" src="./static/videos/kf2.mp4" type="video/mp4" autoplay muted loop playsinline></video> 
+      <div style="text-align: center; margin-top: 0.5rem;">
+        <p>Scene 2: Training with 50 frames. The left image is the input view, while the right one is the rendered view.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+      @article{chen2024pgsr,
+        title={PGSR: Planar-based Gaussian Splatting for Efficient and High-Fidelity Surface Reconstruction},
+        author={Danpeng Chen and Hai Li and Weicai Ye and Yifan Wang and Weijian Xie and Shangjin Zhai and Nan Wang and Haomin Liu and Hujun Bao and Guofeng Zhang},
+          booktitle={arxiv preprint arxiv:2406.06521}, 
+          year={2024}
+      }
+      ```</code></pre>
+  </div>
+</section> -->
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            We thank <a href="https://github.com/nerfies/nerfies.github.io" target="_blank">Nerfies</a> for their amazing template.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
